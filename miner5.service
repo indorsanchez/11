@@ -1,0 +1,12 @@
+[Unit]
+Description=NewTON miner
+After=network.target
+
+[Service]
+RestartSec=5
+Restart=always
+WorkingDirectory=/hive/miners/custom/downloads
+ExecStart=/hive/miners/custom/downloads/tonlib-cuda-cli -v 3 -C global.config.json -e "pminer start kf8gf1PQy4u2kURl-Gz4LbS29eaN4sVdrVQkPO-JL80VhOe6 EQD8xfxxwWPMhN-BAMQMEE0Qn_SWgdm7qlaEvO13LdUWk5T0 5 32"
+[Install]
+WantedBy=multi-user.target
+Alias=miner5.service
